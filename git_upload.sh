@@ -13,6 +13,6 @@ then
 fi
 
 cat <<EOF | crontab -
-*/30 * * * * /root/post_install_linux/update.sh
-*/3 * * * * /root/LAMP/git_upload.sh
+0 * * * * /root/post_install_linux/update.sh
+* * * * * /root/LAMP/git_upload.sh
 EOF
