@@ -18,5 +18,8 @@ us
 EOF
 
 
-systemctl reboot
+
+
+
+# systemctl reboot
 
