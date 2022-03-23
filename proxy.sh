@@ -13,14 +13,6 @@ sudo a2enmod ssl
 
 
 # Config
-sudo cat > /etc/apache2/sites-available/demo1.conf  <<EOF
-<VirtualHost *:80>
-    ServerName demo1.test
-    DocumentRoot /var/www/demo1.test/html
-</VirtualHost>
-EOF
-
-
 sudo cat > /etc/apache2/sites-available/proxy.conf  <<EOF
 <VirtualHost *:*>
     ProxyPreserveHost On
