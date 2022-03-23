@@ -14,5 +14,5 @@ fi
 
 cat <<EOF | crontab -
 */30 * * * * /root/post_install_linux/update.sh
-*/3 * * * * /root/config/git_upload.sh
+*/3 * * * * /root/LAMP/git_upload.sh
 EOF
