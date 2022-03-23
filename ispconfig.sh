@@ -17,5 +17,6 @@ sudo cat > /etc/hostname <<EOF
 us
 EOF
 
+
 systemctl reboot
 
