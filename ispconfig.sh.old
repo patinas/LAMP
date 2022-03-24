@@ -1,0 +1,41 @@
+#!/bin/sh
+sudo chmod +x *.sh
+apt update && apt upgrade -y
+
+sudo cat > /etc/hosts <<EOF
+127.0.0.1 localhost.localdomain   localhost
+# This line should be changed to the correct servername:
+127.0.1.1 us.demo.test us
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+EOF
+
+sudo cat > /etc/hostname <<EOF
+us
+EOF
+
+
+apt install php-zip -y
+apt install php-xml -y 
+apt install php-intl -y
+apt install curl php-curl -y
+apt install php-mbstring -y
+
+systemctl reload apache2
+
+cd /tmp 
+
+wget -O ispconfig.tar.gz https://www.ispconfig.org/downloads/ISPConfig-3-nightly.tar.gz
+
+tar xfz ispconfig.tar.gz
+
+cd ispconfig3*/install/
+
+php -q install.php
+
+
+# systemctl reboot
+
